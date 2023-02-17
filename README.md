@@ -6,10 +6,6 @@
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -25,33 +21,98 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1 Create File Shares
+- Step 2 Set Permissions
+- Step 3 Attempt to access file shares
+- Step 4 Create Security Groups
 
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create File Share Folders
+</p>
+<img src="https://i.imgur.com/7i0gn52.png" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Created new folders named Read-Access, Write-Access, and No-Access.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Set Permissions
+</p>
+<img src="https://i.imgur.com/qMt79Jm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Click the Sharing tab.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dUDcZCf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Choose users to give access to the folder (Jane Doe) and set their permission level (Read only).
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/lEs4W8E.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Attempt to access File Shares.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/J3lD1Lb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Clicked on No-Access folder to check permissions. Windows will not allow access to the folder. Permissions are working correctly here.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/O8QNeHt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+After clicking Read-Access folder and trying not create a folder (write) this notification popped up. Permissions set to only read and not write or create folders/documents. The permissions are working correctly.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/uTsSgyu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Clicked on the Write-Access folder. Created a text file and named it test. The permissions are working correctly for this folder. This folder has read & write permissions.
+</p>
+
+<p>
+Create a Security Group
+</p>
+<img src="https://i.imgur.com/ZwcMMrk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Create a new organizational unit in the Active Directory Domain.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/VUIOtuK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Name it _SECURITY_GROUPS.
+</p>
+
+<p>
+<img src="https://i.imgur.com/p8OCvXp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Create a new group within _SECURITY_GROUPS.
+
+<p>
+<img src="https://i.imgur.com/R6mXFyk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Name the group ACCOUNTANTS, set the group type to security.
+</p>
